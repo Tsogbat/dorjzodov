@@ -1,0 +1,4 @@
+torch>=2.2.0
+numpy
+tqdm
+sentencepiece==0.1.99  # optional; not required but may be useful for experiments. Not used by default.

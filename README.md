@@ -1,0 +1,3 @@
+Ready-to-run trained on Mongolian corpus text dataset. Stylized and modelled specifically on Apple Silicon chip. Mainly used PyTorch with MPS support. No external tokenizers used and needed. Byte level tokenizer used behind the skeleton.
+The project is contained only on this directory. 
+This will be updated...
