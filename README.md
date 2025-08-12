@@ -1,76 +1,56 @@
-Dorjgotov — Byte-Level Decoder-Only Language Model (Apple Silicon, PyTorch MPS)
-Train a GPT-style decoder-only Transformer on raw Mongolian text using PyTorch with Apple Silicon MPS acceleration.
-No external tokenizers required — uses a UTF-8 byte-level tokenizer. Self-contained and ready to run.
+# Dorjzodov - Byte-Level Decoder-Only Language Model
 
-Table of Contents
+![PyTorch](https://img.shields.io/badge/PyTorch-2.2%2B-orange)
+![Apple Silicon](https://img.shields.io/badge/Apple%20Silicon-M1%2FM2%2FM3-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-Features
-Requirements
-Project Structure
-Installation
-Quick Start
-Data Preparation
-Training
-Text Generation
-Interactive Chat
-Configuration
-Mongolian Preprocessing Notes
-Apple Silicon MPS Tips
-Performance Expectations
-Troubleshooting
-License
+A GPT-style decoder-only Transformer trained on raw Mongolian text using PyTorch with Apple Silicon MPS acceleration. Uses a UTF-8 byte-level tokenizer instead of external tokenizers.
 
+## Features
+-  Byte-level UTF-8 tokenizer (Mongolian Cyrillic/classical scripts)
+-  Configurable decoder-only Transformer (~100M+ params)
+-  MPS support for macOS (M1/M2/M3)
+-  Checkpoint saving/resuming
+-  Greedy & temperature sampling generation
+-  Minimal interactive chat interface
 
-Features
+## Requirements
+- Python 3.8+
+- PyTorch 2.2.0+
+- macOS with Apple Silicon (M1/M2/M3)
+- 16GB+ RAM recommended
+- 5GB+ free disk space
 
-Byte-level UTF-8 tokenizer supporting Mongolian Cyrillic and classical scripts
-Configurable decoder-only Transformer (default ~100M+ params, adjustable)
-MPS device support for macOS (M1/M2/M3)
-Checkpoint saving/resuming
-Greedy and temperature sampling generation
-Minimal interactive chat loop
-
-
-Requirements
-
-Python 3.8+
-PyTorch 2.2.0+
-macOS with Apple Silicon (M1/M2/M3)
-16GB+ RAM recommended
-At least 5GB free disk space for model checkpoints
-
-
-Project Structure
+## Project Structure
 mongolian-gpt/
 ├── data/
-│   ├── raw/          # Place raw Mongolian .txt corpus here
-│   └── processed/    # Tokenized .npy files (auto-generated)
+│   ├── raw/          # Raw Mongolian .txt corpus
+│   └── processed/    # Tokenized .npy files
 ├── checkpoints/      # Model checkpoints
-├── outputs/          # Generated text and logs
+├── outputs/          # Generated text/logs
 ├── src/
 │   ├── config.py     # Hyperparameters
 │   ├── tokenizer.py  # Byte-level tokenizer
-│   ├── dataset.py    # Preprocessing and Dataset loader
+│   ├── dataset.py    # Preprocessing/Dataset
 │   ├── model.py      # Transformer model
-│   ├── utils.py      # Utilities (device, checkpoints)
+│   ├── utils.py      # Utilities
 │   ├── train.py      # Training loop
-│   ├── generate.py   # Text generation script
+│   ├── generate.py   # Text generation
 │   └── chat.py       # Interactive chatbot
 ├── requirements.txt
 └── README.md
 
-Installation
-
+# Installation
 Clone repository
 bashgit clone <repo-url>
 cd mongolian-gpt
 
-Install dependencies
+# Install dependencies
 bashpip install -r requirements.txt
 
 
 
-Quick Start
+# Quick Start
 bash# 1. Install dependencies
 pip install -r requirements.txt
 
@@ -254,5 +234,5 @@ python -m pytest tests/
 black src/
 
 License
-MIT License
-Copyright (c) 2024 [Your Name]
+Apache-2.0 license
+Copyright (c) 2025 Tsogbat Bat-Erdene
